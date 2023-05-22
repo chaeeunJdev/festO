@@ -1,0 +1,14 @@
+Kakao Login
+키 발급 : Kakao Developer 홈페이지 -> 애플리케이션 추가 -> 네이티브 앱 키 발급
+적용 : app\src\main\res\values\kakao_app_key.xml 파일로 이동 후 app_key 입력 후 사용
+
+TossPay
+SDK 설정 : https://docs.tosspayments.com/reference/widget-android 참고
+키 발급 : 토스페이 홈페이지(https://developers.tosspayments.com/616602/accounts/790719/phases/test/api-keys)가입 -> test key 발급
+적용 : app\src\main\java\com\nowusee\festo\customer_ui\home\TosspayActivity파일로 이동 -> clientKey에 입력 후 사용
+
+FCM(Firebase)
+SDK 설정 및 프로젝트 생성
+Firebase 콘솔 접속 -> 프로젝트 생성 및 앱 등록 -> 공식 문서 참고 SDK 설정 -> 앱 폴더 google-services.json파일 추가 -> 등록 완료
+키 발급 : app\src\main\java\com\nowusee\festo\MessagingService -> onNewToken 함수를 통해 디바이스에 FCM 토큰 발급 후 사용
+적용 : 키 발급 -> 백엔드 서버에 저장 및 전송 -> 백엔드 서버에서 FCM으로 토큰 값에 맞게 메세지 전송처리

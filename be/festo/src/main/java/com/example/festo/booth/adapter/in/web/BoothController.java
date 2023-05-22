@@ -66,8 +66,8 @@ public class BoothController {
     @PatchMapping("booths/{booth_id}/status")
     public ResponseEntity<?> changeBoothStatus(@PathVariable("booth_id")Long boothId, @RequestBody RequestStatus status){
         log.info("부스 상태 변경 컨트롤러 시작");
-
-        if(!(status.equals("CLOSE") || status.equals("OPEN"))){
+        log.info(status.getStatus());
+        if(!(status.getStatus().equals("CLOSE") || status.getStatus().equals("OPEN"))){
             return new ResponseEntity<>("OPEN과 CLOSE만 가능합니다.", HttpStatus.BAD_REQUEST);
         }
 
@@ -77,7 +77,7 @@ public class BoothController {
             return new ResponseEntity<>("변경이 완료돠었습니다.", HttpStatus.OK);
         }
         else{
-            if(status.equals("CLOSE")) return new ResponseEntity<>("이미 마감하였습니다.", HttpStatus.BAD_REQUEST);
+            if(status.getStatus().equals("CLOSE")) return new ResponseEntity<>("이미 마감하였습니다.", HttpStatus.BAD_REQUEST);
             else return new ResponseEntity<>("이미 오픈 중입니다.", HttpStatus.BAD_REQUEST);
         }
 

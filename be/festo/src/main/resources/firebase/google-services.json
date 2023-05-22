@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "308287395942",
-    "project_id": "fest-o-4a616",
-    "storage_bucket": "fest-o-4a616.appspot.com"
+    "project_number": "130788816557",
+    "project_id": "fest-o-8cec4",
+    "storage_bucket": "fest-o-8cec4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:308287395942:android:10d5801ec1d9db51b335a7",
+        "mobilesdk_app_id": "1:130788816557:android:35d9eaf792604bc2fe3824",
         "android_client_info": {
-          "package_name": "com.example.festo"
+          "package_name": "com.nowusee.festo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "308287395942-me84g3lhqvslcleaiqb2ubksf0l4fm5h.apps.googleusercontent.com",
+          "client_id": "130788816557-51nhma1ehb4uep3mev2o273pimddcvv2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nowusee.festo",
+            "certificate_hash": "34b40a0b1a0bd8484a657082debdfebbf0c2f2e1"
+          }
+        },
+        {
+          "client_id": "130788816557-4t70lsik1ort0fuf0cdogrumjloltsvj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBIrUVAfyvhzqDq3898DjREOXF3Dke4rHA"
+          "current_key": "AIzaSyDAFaRVpMihXukNo0YKx9RbLApW5B6bkgI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "308287395942-me84g3lhqvslcleaiqb2ubksf0l4fm5h.apps.googleusercontent.com",
+              "client_id": "130788816557-4t70lsik1ort0fuf0cdogrumjloltsvj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

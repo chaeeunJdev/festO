@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 public class FirebaseCloudMessageService {
 
-    private final String API_URL = "https://fcm.googleapis.com/v1/projects/fest-o-4a616/messages:send";
+    private final String API_URL = "https://fcm.googleapis.com/v1/projects/fest-o-8cec4/messages:send";
     private final ObjectMapper objectMapper;
 
     public void sendMessageTo(String targetToken, String title, String body) throws IOException {

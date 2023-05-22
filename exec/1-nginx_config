@@ -1,0 +1,47 @@
+server {
+        listen 80; # 80포트로 들어오는 경우
+        server_name k8c106.p.ssafy.io;
+        client_max_body_size 0;
+
+        return 301 https://$server_name$request_uri;
+}
+
+server {
+        server_name k8c106.p.ssafy.io; # 없을경우 localhost
+
+        listen 443 ssl http2; # managed by Certbot
+
+        ssl_certificate /etc/letsencrypt/live/k8c106.p.ssafy.io/fullchain.pem; # managed by Certbot
+        ssl_certificate_key /etc/letsencrypt/live/k8c106.p.ssafy.io/privkey.pem; # managed by Certbot
+
+        client_max_body_size 0;
+
+        # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+
+        # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+        location /api {
+                rewrite ^/api(/.*)$ $1 break; #url에서 api 뒤에 있는 url 그대로 사용
+                proxy_pass http://localhost:8080;
+                proxy_redirect off;
+                charset utf-8;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "upgrade";
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-NginX-Proxy true;
+        }
+
+        location /data {
+                rewrite ^/data(/.*)$ $1 break; #url에서 data 뒤에 있는 url 그대로 사용
+                proxy_pass http://localhost:8000;
+                proxy_redirect off;
+                charset utf-8;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "upgrade";
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;

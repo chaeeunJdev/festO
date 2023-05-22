@@ -1,0 +1,8 @@
+docker build -t dataimg ./ai
+if (docker ps | grep "dataimg"); then docker stop dataimg; fi
+docker run -it -d --rm -p 8000:8000 --name dataimg dataimg
+
+docker build -t backimg ./be/festo
+if (docker ps | grep "backimg"); then docker stop backimg; fi
+docker run -it -d --rm -p 8080:8080 --name backimg backimg
+echo "Run festo"
