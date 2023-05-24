@@ -25,7 +25,7 @@ BackEnd
 
 - Java 17
 - Spring boot 3.0
-- Spring Sequrity
+- Spring Security
 - Spring Data JPA
 
 DB
